@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Alpher — Here to stay</title>
+    <title>Alpher Technologies — Here to stay</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="menu.css">
     <script src="alpher.js"></script>
@@ -18,7 +18,7 @@
     <div class="wrap">
         <header>
             <div class="brand">
-                <div class="logo">alpher</div>
+                <div class="logo">AT</div>
                 <div>
                     <h1>ALPHER </h1>
                     <p>Here to stay</p>
@@ -45,8 +45,7 @@
                 <h2>We build resilient digital systems for businesses — from concept to production.</h2>
                 <p class="lead">Alpher Technologies delivers coding, computing, networking, software development,
                     branding and other IT related solutions. We design reliable products and offer managed
-                    services to help organisations operate online with confidence thus reducing the long relationships
-                    between businesses and their distant clients through ensuring 24/7 business-client interraction.</p>
+                    services to help organisations operate online with confidence thus reducing the long relationships between businesses and their distant clients through ensuring 24/7 business-client interraction.</p>
 
                 <div style="margin-top:14px" class="pills">
                     <div class="pill">Custom Software</div>
@@ -65,7 +64,7 @@
                 </div>
 
                 <div style="margin-top:18px;color:var(--muted)">
-                    <strong>Headquarters:</strong> Kampala, Uganda • <strong>Contact:</strong> alphertech@gmail.com <strong>+256 708 885123</strong>
+                    <strong>Headquarters:</strong> Kampala, Uganda • <strong>Contact:</strong> alphertech@gmail.com
                 </div>
             </div>
 
@@ -182,7 +181,7 @@
             <div style="margin-top:12px" class="staff-grid">
                 <div class="staff-card">
                     <div style="display:flex;gap:12px;align-items:center">
-                        <div class="avatar-sm">TJ</div>
+                        <div class="avatar-sm">JT</div>
                         <div>
                             <h4>Twale James</h4>
                             <div class="role">Founder & Lead Engineer</div>
@@ -230,8 +229,7 @@
             </div>
 
             <p style="margin-top:12px;color:var(--muted);font-size:13px">Want to join our team? Send your CV to
-                <strong>alphertech@gmail.com</strong> with subject <em>Careers - [Your name]</em>.
-            </p>
+                <strong>twalejames83@gmail.com</strong> with subject <em>Careers - [Your name]</em>.</p>
         </section>
 
         <!-- Messaging areas: public guestboard + contact form -->
@@ -256,15 +254,12 @@
                     <textarea id="c_message" placeholder="Tell us about your project" required></textarea>
 
                     <div style="margin-top:10px;display:flex;gap:10px">
-                        <button type="submit" class="btn-primary">Send Private Mail </button>
-                        <button type="button" class="btn-ghost" onclick="submitToServerDemo()">Post Review</button>
+                        <button type="submit" class="btn-primary">Open email client</button>
+                        <button type="button" class="btn-ghost" onclick="submitToServerDemo()">Post on site</button>
                     </div>
 
-                    <p class="muted" style="margin-top:10px;font-size:13px">Note: "Send message to us or Post on this
-                        site" Our team will be ready to interract with you, Answer all your inquiries. Feel free to give
-                        us your view about
-                        our previous projects. You can also rate our services using this section. Any feedback about us,
-                        we welcome it
+                    <p class="muted" style="margin-top:10px;font-size:13px">Note: "Send message to us or Post on this site" Our team will be ready to interract with you, Answer all your inquiries. Feel free to give us your view about 
+                        our previous projects. You can also rate our services using this section. Any feedback about us, we welcome it
                     </p>
                 </form>
 
@@ -283,7 +278,7 @@
                     <div id="guestMessages" class="messages" style="margin-top:12px"></div>
 
                     <div style="margin-top:12px;display:flex;gap:8px">
-                        <!-- <button class="btn-ghost" onclick="clearGuestboard()">Clear (demo)</button> -->
+                        <button class="btn-ghost" onclick="clearGuestboard()">Clear (demo)</button>
                         <button class="btn-ghost" onclick="exportGuestboard()">Export</button>
                     </div>
                 </aside>
@@ -291,12 +286,12 @@
 
             <!-- internal messages table (staff) -->
             <div style="margin-top:16px" class="card">
-                <h4 style="margin-top:0">Reviews from Clients</h4>
-                <p class="muted">Public Reviews.</p>
+                <h4 style="margin-top:0">Internal messages (staff)</h4>
+                <p class="muted">Load comments and reviews from the public and previous clients.</p>
 
                 <div style="margin-top:10px">
                     <button class="btn-ghost" onclick="loadInternalMessages()">Load messages</button>
-                    <!-- <button class="btn-ghost" onclick="clearInternalMessages()">Clear internal (demo)</button> -->
+                    <button class="btn-ghost" onclick="clearInternalMessages()">Clear internal (demo)</button>
                 </div>
 
                 <div id="internalMessages" class="messages" style="margin-top:12px"></div>
@@ -306,33 +301,61 @@
 
         <footer>
             <div style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:center">
-                <div>© <span id="year"></span> Alpher — <em>Here to stay</em></div>
-                <div class="muted">• Kampala, Uganda</div>
+                <div>© <span id="year"></span> Alpher Technologies — <em>Here to stay</em></div>
+                <div class="muted">Built & maintained by Alpher Technologies • Kampala, Uganda</div>
             </div>
         </footer>
 
     </div>
 </body>
 <script>
-    const menuIcon = document.querySelector('.menu-icon');
-    const navUl = document.querySelector('nav ul');
-    menuIcon.addEventListener('click', () => {
-        menuIcon.classList.toggle('active');
-        navUl.classList.toggle('active');
-    });
-    // Optional: Close menu when clicking outside or on a link
-    document.addEventListener('click', (e) => {
-        if (!menuIcon.contains(e.target) && !navUl.contains(e.target)) {
-            menuIcon.classList.remove('active');
-            navUl.classList.remove('active');
+        const menuIcon = document.querySelector('.menu-icon');
+        const nav = document.querySelector('nav');
+
+        function handleMenuToggle() {
+            menuIcon.classList.toggle('active');
+            if (window.innerWidth <= 768) {
+                nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
+                nav.style.flexDirection = 'column';
+                nav.style.position = 'absolute';
+                nav.style.top = '60px';
+                nav.style.right = '18px';
+                nav.style.background = 'rgba(20,20,30,0.98)';
+                nav.style.borderRadius = '12px';
+                nav.style.boxShadow = '0 8px 24px rgba(0,0,0,0.18)';
+                nav.style.padding = '18px 12px';
+                nav.style.zIndex = '1000';
+                nav.style.gap = '10px';
+                nav.style.minWidth = '160px';
+            }
         }
-    });
-    navUl.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => {
-            menuIcon.classList.remove('active');
-            navUl.classList.remove('active');
+
+        menuIcon.addEventListener('click', handleMenuToggle);
+
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) {
+                nav.style.display = 'flex';
+                nav.style.position = '';
+                nav.style.top = '';
+                nav.style.right = '';
+                nav.style.background = '';
+                nav.style.borderRadius = '';
+                nav.style.boxShadow = '';
+                nav.style.padding = '';
+                nav.style.zIndex = '';
+                nav.style.gap = '';
+                nav.style.minWidth = '';
+                nav.style.flexDirection = '';
+            } else {
+                nav.style.display = 'none';
+                menuIcon.classList.remove('active');
+            }
         });
-    });
-</script>
+
+        // Initial state
+        if (window.innerWidth <= 768) {
+            nav.style.display = 'none';
+        }
+    </script>
 
 </html>
