@@ -5,8 +5,9 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Alpher Technologies — Here to stay</title>
+    <title>Alpher — Here to stay</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="menu.css">
     <script src="alpher.js"></script>
     <meta name="description"
         content="Alpher Technologies — Coding, computing, networking, software development, branding and satellite communications. Professional digital solutions. Contact: twalejames83@gmail.com" />
@@ -17,9 +18,9 @@
     <div class="wrap">
         <header>
             <div class="brand">
-                <div class="logo">AT</div>
+                <div class="logo">alpher</div>
                 <div>
-                    <h1>Alpher Technologies</h1>
+                    <h1>ALPHER </h1>
                     <p>Here to stay</p>
                 </div>
             </div>
@@ -29,8 +30,13 @@
                 <a href="#projects">Projects</a>
                 <a href="#staff">Staff</a>
                 <a href="#contact">Contact</a>
-                <a class="cta" href="#contact">Get in touch</a>
+                <!-- <a class="cta" href="#contact">Get in touch</a> -->
             </nav>
+            <div class="menu-icon">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
         </header>
 
         <!-- HERO / VALUE -->
@@ -39,7 +45,8 @@
                 <h2>We build resilient digital systems for businesses — from concept to production.</h2>
                 <p class="lead">Alpher Technologies delivers coding, computing, networking, software development,
                     branding and other IT related solutions. We design reliable products and offer managed
-                    services to help organisations operate online with confidence thus reducing the long relationships between businesses and their distant clients through ensuring 24/7 business-client interraction.</p>
+                    services to help organisations operate online with confidence thus reducing the long relationships
+                    between businesses and their distant clients through ensuring 24/7 business-client interraction.</p>
 
                 <div style="margin-top:14px" class="pills">
                     <div class="pill">Custom Software</div>
@@ -58,7 +65,7 @@
                 </div>
 
                 <div style="margin-top:18px;color:var(--muted)">
-                    <strong>Headquarters:</strong> Kampala, Uganda • <strong>Contact:</strong> twalejames83@gmail.com
+                    <strong>Headquarters:</strong> Kampala, Uganda • <strong>Contact:</strong> alphertech@gmail.com <strong>+256 708 885123</strong>
                 </div>
             </div>
 
@@ -175,7 +182,7 @@
             <div style="margin-top:12px" class="staff-grid">
                 <div class="staff-card">
                     <div style="display:flex;gap:12px;align-items:center">
-                        <div class="avatar-sm">JT</div>
+                        <div class="avatar-sm">TJ</div>
                         <div>
                             <h4>Twale James</h4>
                             <div class="role">Founder & Lead Engineer</div>
@@ -223,7 +230,8 @@
             </div>
 
             <p style="margin-top:12px;color:var(--muted);font-size:13px">Want to join our team? Send your CV to
-                <strong>twalejames83@gmail.com</strong> with subject <em>Careers - [Your name]</em>.</p>
+                <strong>alphertech@gmail.com</strong> with subject <em>Careers - [Your name]</em>.
+            </p>
         </section>
 
         <!-- Messaging areas: public guestboard + contact form -->
@@ -248,20 +256,21 @@
                     <textarea id="c_message" placeholder="Tell us about your project" required></textarea>
 
                     <div style="margin-top:10px;display:flex;gap:10px">
-                        <button type="submit" class="btn-primary">Open email client</button>
-                        <button type="button" class="btn-ghost" onclick="submitToServerDemo()">Send to server
-                            (demo)</button>
+                        <button type="submit" class="btn-primary">Send Private Mail </button>
+                        <button type="button" class="btn-ghost" onclick="submitToServerDemo()">Post Review</button>
                     </div>
 
-                    <p class="muted" style="margin-top:10px;font-size:13px">Note: "Send to server (demo)" will simulate
-                        a server submission and store the message in the internal messages list (client-side demo). For
-                        production, we can wire this to Formspree, Netlify Forms, or a real API.</p>
+                    <p class="muted" style="margin-top:10px;font-size:13px">Note: "Send message to us or Post on this
+                        site" Our team will be ready to interract with you, Answer all your inquiries. Feel free to give
+                        us your view about
+                        our previous projects. You can also rate our services using this section. Any feedback about us,
+                        we welcome it
+                    </p>
                 </form>
 
                 <aside class="card">
-                    <h4 style="margin-top:0">Public guestboard (demo)</h4>
-                    <p class="muted">Visitors can post short public notes. Messages are stored locally for this demo
-                        (browser localStorage). We can replace this with a secure backend and moderation tools.</p>
+                    <h4 style="margin-top:0">Public guestboard</h4>
+                    <p class="muted">Dear guest!, Leave us something here.</p>
 
                     <div style="margin-top:10px;display:flex;gap:8px">
                         <input id="g_name" type="text" placeholder="Name"
@@ -274,7 +283,7 @@
                     <div id="guestMessages" class="messages" style="margin-top:12px"></div>
 
                     <div style="margin-top:12px;display:flex;gap:8px">
-                        <button class="btn-ghost" onclick="clearGuestboard()">Clear (demo)</button>
+                        <!-- <button class="btn-ghost" onclick="clearGuestboard()">Clear (demo)</button> -->
                         <button class="btn-ghost" onclick="exportGuestboard()">Export</button>
                     </div>
                 </aside>
@@ -282,14 +291,12 @@
 
             <!-- internal messages table (staff) -->
             <div style="margin-top:16px" class="card">
-                <h4 style="margin-top:0">Internal messages (staff)</h4>
-                <p class="muted">Messages sent via the "Send to server (demo)" button are kept here for staff review.
-                    This demo stores messages in localStorage under <code>alpher_internal_messages</code>. You can
-                    protect the staff view with simple passcodes or integrate real auth in a production build.</p>
+                <h4 style="margin-top:0">Reviews from Clients</h4>
+                <p class="muted">Public Reviews.</p>
 
                 <div style="margin-top:10px">
                     <button class="btn-ghost" onclick="loadInternalMessages()">Load messages</button>
-                    <button class="btn-ghost" onclick="clearInternalMessages()">Clear internal (demo)</button>
+                    <!-- <button class="btn-ghost" onclick="clearInternalMessages()">Clear internal (demo)</button> -->
                 </div>
 
                 <div id="internalMessages" class="messages" style="margin-top:12px"></div>
@@ -299,12 +306,33 @@
 
         <footer>
             <div style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:center">
-                <div>© <span id="year"></span> Alpher Technologies — <em>Here to stay</em></div>
-                <div class="muted">Built & maintained by Alpher Technologies • Kampala, Uganda</div>
+                <div>© <span id="year"></span> Alpher — <em>Here to stay</em></div>
+                <div class="muted">• Kampala, Uganda</div>
             </div>
         </footer>
 
     </div>
 </body>
+<script>
+    const menuIcon = document.querySelector('.menu-icon');
+    const navUl = document.querySelector('nav ul');
+    menuIcon.addEventListener('click', () => {
+        menuIcon.classList.toggle('active');
+        navUl.classList.toggle('active');
+    });
+    // Optional: Close menu when clicking outside or on a link
+    document.addEventListener('click', (e) => {
+        if (!menuIcon.contains(e.target) && !navUl.contains(e.target)) {
+            menuIcon.classList.remove('active');
+            navUl.classList.remove('active');
+        }
+    });
+    navUl.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            menuIcon.classList.remove('active');
+            navUl.classList.remove('active');
+        });
+    });
+</script>
 
 </html>
